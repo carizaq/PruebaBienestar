@@ -1,0 +1,17 @@
+<h2>Consulta por Nombre</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+       <shared-search-box 
+       (onValue)="buscarPorNombre($event)"
+       placeholder="Nombre Usuario"></shared-search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+      <hr>
+      <familia-table [usuarios]="usuarios"></familia-table>
+    </div>
+</div>

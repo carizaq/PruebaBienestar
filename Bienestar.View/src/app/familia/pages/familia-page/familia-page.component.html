@@ -1,0 +1,300 @@
+<h2>Crear Familia</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <div class="mb-3 row">
+      <label class="col-sm-3 col-form-label">Padres a Registrar</label>
+      <div class="col-sm-4">
+        <select class="form-control" [formControl]="progenitoresSeleccionadosControl"
+          (change)="onProgenitoresSeleccionados()">
+          <option value="A">Padre & Madre</option>
+          <option value="P">Padre</option>
+          <option value="M">Madre</option>
+        </select>
+      </div>
+    </div>
+
+    <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
+      <!-- Campos Padre -->
+      <div class="card" formGroupName="padre" *ngIf="showDivPadre">
+        <div class="card-header">Padre</div>
+        <div class="card-body">
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Nombres</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres Padre">
+              <span *ngIf="isValidField('padre','nombres')" class="form-text text-danger">
+                {{getFieldError('padre','nombres')}}
+              </span>
+            </div>
+
+            <!-- Campo Apellidos Padre -->
+            <label class="col-sm-2 col-form-label">Apellidos</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos Padre">
+              <span *ngIf="isValidField('padre','apellidos')" class="form-text text-danger">
+                {{getFieldError('padre','apellidos')}}
+              </span>
+            </div>
+          </div>
+
+          <!-- Campo de Identifiación -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Identificación</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" formControlName="numeroIdentificacion"
+                placeholder="Número Identificación">
+              <span *ngIf="isValidField('padre','numeroIdentificacion')" class="form-text text-danger">
+                {{getFieldError('padre','numeroIdentificacion')}}
+              </span>
+            </div>
+
+            <label class="col-sm-2 col-form-label" for="selectOption">Genero:</label>
+            <div class="col-sm-4">
+              <select id="selectOption" class="form-control" formControlName="genero">
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+            <div class="col-sm-4">
+              <input type="date" class="form-control" formControlName="fechaNacimiento">
+              <span *ngIf="isValidField('padre','fechaNacimiento')" class="form-text text-danger">
+                {{getFieldError('padre','fechaNacimiento')}}
+              </span>
+            </div>
+
+            <label class="col-sm-2 col-form-label">Tipo Empleo</label>
+            <div class="col-sm-4">
+              <select id="selectOption" class="form-control" formControlName="tipoEmpleo">
+                <option value="I">Independiente</option>
+                <option value="E">Empleado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Experiencia Laboral</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" formControlName="experienciaLaboral">
+              <span *ngIf="isValidField('padre','experienciaLaboral')" class="form-text text-danger">
+                {{getFieldError('padre','experienciaLaboral')}}
+              </span>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Observaciones</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="observaciones">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ACA EMPIEZA DATOS MADRE -->
+      <div class="card" formGroupName="madre" *ngIf="showDivMadre">
+        <div class="card-header">Madre</div>
+        <div class="card-body">
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Nombres</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres Madre">
+              <span *ngIf="isValidField('madre','nombres')" class="form-text text-danger">
+                {{getFieldError('madre','nombres')}}
+              </span>
+            </div>
+
+            <!-- Campo Apellidos -->
+            <label class="col-sm-2 col-form-label">Apellidos</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos Madre">
+              <span *ngIf="isValidField('madre','apellidos')" class="form-text text-danger">
+                {{getFieldError('madre','apellidos')}}
+              </span>
+            </div>
+          </div>
+
+          <!-- Campo de Identifiación -->
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Identificación</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" formControlName="numeroIdentificacion"
+                placeholder="Número Identificación">
+              <span *ngIf="isValidField('madre','numeroIdentificacion')" class="form-text text-danger">
+                {{getFieldError('madre','numeroIdentificacion')}}
+              </span>
+            </div>
+
+            <label class="col-sm-2 col-form-label" for="selectOption">Genero:</label>
+            <div class="col-sm-4">
+              <select class="form-control" formControlName="genero">
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+            <div class="col-sm-4">
+              <input type="date" class="form-control" formControlName="fechaNacimiento">
+              <span *ngIf="isValidField('madre','fechaNacimiento')" class="form-text text-danger">
+                {{getFieldError('madre','fechaNacimiento')}}
+              </span>
+            </div>
+
+            <label class="col-sm-2 col-form-label">Tipo Empleo</label>
+            <div class="col-sm-4">
+              <select class="form-control" formControlName="tipoEmpleo">
+                <option value="I">Independiente</option>
+                <option value="E">Empleado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Experiencia Laboral</label>
+            <div class="col-sm-4">
+              <input type="number" class="form-control" formControlName="experienciaLaboral">
+              <span *ngIf="isValidField('madre','experienciaLaboral')" class="form-text text-danger">
+                {{getFieldError('madre','experienciaLaboral')}}
+              </span>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Observaciones</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="observaciones">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACA EMPIEZA DATOS HIJOS -->
+      <div formArrayName="hijosArray">
+        <div class="card" *ngFor="let hijo of hijosControl.controls; let i = index"
+          [formGroupName]="i">
+          <div class="card-header">Hijo {{i+1}}</div>
+          <div class="card-body">
+            <div>
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Nombres</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres">
+
+                </div>
+
+                <!-- Campo Apellidos  -->
+                <label class="col-sm-2 col-form-label">Apellidos</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+
+                </div>
+              </div>
+
+              <!--  -->
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Identificación</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" formControlName="numeroIdentificacion"
+                    placeholder="Número Identificación">
+
+                </div>
+
+                <label class="col-sm-2 col-form-label" for="selectOption">Genero:</label>
+                <div class="col-sm-4">
+                  <select class="form-control" formControlName="genero">
+                    <option value="F">Femenino</option>
+                    <option value="M">Masculino</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+                <div class="col-sm-4">
+                  <input type="date" class="form-control" formControlName="fechaNacimiento">
+                  <!-- <span *ngIf="isValidFieldInArray({{i}},'fechaNacimiento')" class="form-text text-danger">
+                    {{getFieldError('hijo','fechaNacimiento')}}
+                  </span>  -->
+                </div>
+                <label class="col-sm-2 col-form-label" for="selectOption">Estudia:</label>
+                <div class="col-sm-4">
+                  <select class="form-control" formControlName="estudia">
+                    <option value="S">SI</option>
+                    <option value="N">NO</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Estatura(cms)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" formControlName="estaturaCms">
+                  <!-- <span *ngIf="isValidField('hijo','fechaNacimientoH')" class="form-text text-danger">
+                    {{getFieldError('hijo','fechaNacimiento')}}
+                  </span> -->
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Descripción(cms)</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" formControlName="descripcionFisica">
+                  <!-- <span *ngIf="isValidField('hijo','fechaNacimientoH')" class="form-text text-danger">
+                    {{getFieldError('hijo','fechaNacimiento')}}
+                  </span> -->
+                </div>
+              </div>
+              <div *ngIf="i===0" class="mb-3 row">
+                <button type="button" (click)="OnEliminarhijo(i)" class="btn btn-danger">Eliminar Hijo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col">
+            <button type="button" (click)="onAgregarHijosControl()" class="btn btn-primary">Añadir Hijo</button>
+          </div>          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary float-end">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>
+
+<!-- 
+
+
+<div class="row">
+  <div class="col">
+
+    <span>Valid</span>
+    <pre>{{ myForm.valid | json }}</pre>
+
+    <span>Pristine</span>
+    <pre>{{ myForm.pristine | json }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ myForm.touched | json }}</pre>
+
+    <span>Value</span>
+    <pre>{{ myForm.value | json }}</pre>
+
+
+  </div>
+</div> -->
