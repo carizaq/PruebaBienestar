@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Bienestar.Entities.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Bienestar.Entities
 {
+    [Table("TL_Usuarios")]
     public class Usuario
     {
         [Key]
@@ -23,5 +26,8 @@ namespace Bienestar.Entities
         public DateTime FechaNacimiento { get; set; }
         [Required]
         public char Genero { get; set; }
+
+        public Hijo Hijo { get; set; }
+        public Padre Padre { get; set; }
     }
 }

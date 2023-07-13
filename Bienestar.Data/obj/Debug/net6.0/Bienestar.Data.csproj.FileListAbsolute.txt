@@ -1,0 +1,17 @@
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Data.deps.json
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Data.runtimeconfig.json
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Data.dll
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Data.pdb
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.csproj.AssemblyReference.cache
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.AssemblyInfoInputs.cache
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.AssemblyInfo.cs
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.csproj.CoreCompileInputs.cache
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.dll
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\refint\Bienestar.Data.dll
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.pdb
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.genruntimeconfig.cache
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\ref\Bienestar.Data.dll
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Entities.dll
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\bin\Debug\net6.0\Bienestar.Entities.pdb
+C:\Users\chris\OneDrive\Documents\Visual Studio 2022\Proyectos\Bienestar\Bienestar.Data\obj\Debug\net6.0\Bienestar.Data.csproj.CopyComplete

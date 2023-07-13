@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "XtPy9vUaPq+61kIwJyQKqJrdEvneokcBBE8vRXXDS14=",
-  "Source": "Bienestar.Data",
-  "BasePath": "_content/Bienestar.Data",
+  "Hash": "DwJpbtCYVm9X1+WJQprGDWUNxN6P+cisHkCBhdP5q6U=",
+  "Source": "Bienestar.Negocio",
+  "BasePath": "_content/Bienestar.Negocio",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
