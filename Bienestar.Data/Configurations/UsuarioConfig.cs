@@ -14,7 +14,7 @@ namespace Bienestar.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.HasIndex(p => p.NumeroIdentificacion);
+            builder.HasIndex(p => p.NumeroIdentificacion).IsUnique(true);
 
             builder.Property(p => p.Nombres)
             .HasMaxLength(250);

@@ -17,7 +17,7 @@ namespace Bienestar.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NumeroIdentificacion = table.Column<int>(type: "int", nullable: false),
+                    NumeroIdentificacion = table.Column<long>(type: "bigint", nullable: false),
                     Nombres = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     Apellidos = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     FechaNacimiento = table.Column<DateTime>(type: "date", nullable: false),
@@ -69,7 +69,7 @@ namespace Bienestar.Data.Migrations
                         column: x => x.UsuarioId,
                         principalTable: "TL_Usuarios",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -93,7 +93,7 @@ namespace Bienestar.Data.Migrations
                         column: x => x.PadreId,
                         principalTable: "TL_Padres",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
@@ -116,7 +116,8 @@ namespace Bienestar.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_TL_Usuarios_NumeroIdentificacion",
                 table: "TL_Usuarios",
-                column: "NumeroIdentificacion");
+                column: "NumeroIdentificacion",
+                unique: true);
         }
 
         /// <inheritdoc />

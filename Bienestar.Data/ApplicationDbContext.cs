@@ -28,7 +28,8 @@ namespace Bienestar.Data
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Hijo> Padres { get; set; }
+        public DbSet<Padre> Padres { get; set; }
+        public DbSet<Hijo> Hijos { get; set; }
         public DbSet<RelacionPadreHijo> RelacionPadreHijos { get; set; }
     }
 

@@ -6,7 +6,7 @@ namespace Bienestar.Negocio.DTO
     {
         public PadresDTO Padre { get; set; }
         public PadresDTO Madre { get; set; }
-        public HijosDTO HijosArray { get; set; }
+        public IEnumerable<HijosDTO> HijosArray { get; set; }
 
     }
 

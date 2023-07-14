@@ -120,12 +120,13 @@ namespace Bienestar.Data.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("NumeroIdentificacion")
-                        .HasColumnType("int");
+                    b.Property<long>("NumeroIdentificacion")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NumeroIdentificacion");
+                    b.HasIndex("NumeroIdentificacion")
+                        .IsUnique();
 
                     b.ToTable("TL_Usuarios");
                 });

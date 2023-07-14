@@ -15,7 +15,7 @@ namespace Bienestar.Entities
         [Key]
         public int Id { get; set; }
         [Required]
-        public int NumeroIdentificacion { get; set; }
+        public Int64 NumeroIdentificacion { get; set; }
         [MaxLength(250)]
         [Required]
         public string Nombres { get; set; }

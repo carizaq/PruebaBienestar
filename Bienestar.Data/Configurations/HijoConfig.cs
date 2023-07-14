@@ -14,7 +14,7 @@ namespace Bienestar.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Hijo> builder)
         {
-            builder.HasIndex(p => p.UsuarioId);
+            builder.HasIndex(p => p.UsuarioId).IsUnique(true);
         }
     }
 }

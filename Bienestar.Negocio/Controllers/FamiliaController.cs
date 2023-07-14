@@ -10,9 +10,8 @@ namespace Bienestar.Negocio.Controllers
     [ApiController]
     public class FamiliaController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        
         private readonly IFamiliaRepository<UsuarioDTO> _familiaRepository;
-
 
         public FamiliaController(IFamiliaRepository<UsuarioDTO> familiaRepository)
         {
@@ -21,7 +20,7 @@ namespace Bienestar.Negocio.Controllers
 
         [HttpGet]
         [Route("UsuarioPorIdentificacion/")]
-        public async Task<UsuarioDTO> ObtenerUsuarioPorIdentificacion(int pIdentificacion)
+        public async Task<UsuarioDTO> ObtenerUsuarioPorIdentificacion(Int64 pIdentificacion)
         {
             return await _familiaRepository.ObtenerUsuarioPorIdentificacion(pIdentificacion); 
         }
@@ -41,10 +40,40 @@ namespace Bienestar.Negocio.Controllers
         }
 
         [HttpPost]
-        [Route("CrearUsuario/")]
-        public async Task<UsuarioDTO> CrearUsuario(UsuarioDTO pUsuario)
+        [Route("CrearFamilia/")]
+        public async Task<ActionResult> CrearFamilia(FamiliaDTO pFamilia)
         {
-            return await _familiaRepository.CrearFamilia(pUsuario);
+            try
+            {
+                await _familiaRepository.CrearFamilia(pFamilia);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
+
+        [HttpPatch]
+        [Route("ElimnarrUsuario/")]
+        public async Task<UsuarioDTO> ActualizarUsuario(UsuarioDTO pUsuario)
+        {
+            return await _familiaRepository.ActualizarUsuario(pUsuario);
+        }
+
+        [HttpDelete]
+        [Route("ActualizarUsuario/")]
+        public async Task<ActionResult> ElimnarUsuario(int pId)
+        {
+            bool eliminado = await _familiaRepository.EliminarUsuario(pId);
+             if(eliminado)
+                return Ok();
+             else
+                return NotFound("No fue posible eliminar el usuario");
+        }
+
+
+
     }
 }
